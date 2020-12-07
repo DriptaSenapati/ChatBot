@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.content{
+    width: 100vw;
+    min-height: 100vh;
+    background: rgb(195, 235, 236);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+}
+.botsign{
+    --animate-duration: 2s;
+}
+.botsign .circles{
+    width: 50vh;
+    height: 50vh;
+    position: relative;
+    /* background: red; */
+}
+.botsign .circles .child:nth-child(1){
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    /* background: #040435; */
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    transform: rotateX(0deg);
+    animation: spin1 2s;
+}
+.botsign .circles .child:nth-child(1)::after{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    content: '';
+    height: 95%;
+    width: 95%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 2000px #040435;
+}
+.botsign .circles .child:nth-child(2){
+    height: 95%;
+    width: 95%;
+    border-radius: 50%;
+    /* background: rgb(159 181 222); */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateY(0deg);
+    overflow: hidden;
+    animation: spin 2s 0.2s;
+    transform-style: preserve-3d;
+    z-index: 0;
+}
+.botsign .circles .child:nth-child(2)::after{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    content: '';
+    height: 90%;
+    width: 90%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 2000px rgb(159 181 222);
+}
+.botsign .circles .child:nth-child(3){
+    height: 80%;
+    width: 80%;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    animation: opa 5s;
+}
+.botsign .circles .child:nth-child(3)::after{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    content: '';
+    height: 90%;
+    width: 90%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 2000px #6c7ba7;
+}
+.intro{
+    margin-top: 70px;
+    width: 70vw;
+    text-align: center;
+}
+.intro p{
+    font-size: 50px;
+    animation: desc 3s;
+}
+.output{
+    animation: desc 4s;
+}
+.typearea{
+    width: 50vw;
+    height: 50px;
+    margin: 50px;
+    position: relative;
+}
+.typearea img{
+    width: 25px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20%;
+}
+#textarea{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    padding: 10px 15px;
+    outline: none;
+    border: 1px solid blueviolet;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}
+.controls{
+    text-align: center;
+}
+.Cancel{
+    display: none;
+}
+.activate .Cancel{
+    display: inline-block;
+}
+@keyframes spin{
+    0%{
+        transform: translate(-50%,-50%) rotateY(0deg);
+    }
+    100%{
+        transform: translate(-50%,-50%) rotateY(180deg);
+    }
+}
+@keyframes spin1{
+    0%{
+        transform: rotateX(0deg);
+    }
+    100%{
+        transform: rotateX(180deg);
+    }
+}
+@keyframes opa{
+    0%{
+        display: none;
+        opacity: 0;
+    }
+    1%{
+        display: block;
+        opacity: 0;
+    }
+    100%{
+        display: block;
+        opacity: 1;
+    }
+}
+@keyframes desc{
+    0%{
+        display: none;
+        opacity: 0;
+    }
+    1%{
+        display: block;
+        opacity: 0;
+    }
+    100%{
+        display: block;
+        opacity: 1;
+    }
+}
