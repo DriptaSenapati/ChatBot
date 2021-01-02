@@ -10,6 +10,7 @@ from model import data_preprocessing
 import importlib
 from model import seq2seq_wrapper
 import warnings
+import os
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 
@@ -83,7 +84,7 @@ def get():
         for ent in doc.ents:
             if ent.label_ == "GPE":
                 try:
-                    URL = "http://api.weatherapi.com/v1/current.json?key=4437124e1dc7472eb4b51849200512&q=" + ent.text
+                    URL = "http://api.weatherapi.com/v1/current.json?key="+os.environ.get('API_WEATHER_KEY')+"&q=" + ent.text
                     res = weather_forecast(URL)
                     text = "Currently " + ent.text + " is " + \
                         res['current']['condition']['text'] + ' and temperature is ' + \
