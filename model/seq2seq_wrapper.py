@@ -43,7 +43,7 @@ class Seq2Seq(object):
 
 
         __graph__()
-        sys.stdout.write('\n################Start Chatting Below########################\n')
+        sys.stdout.write('\n################Launching Local Server########################\n')
 
 
 

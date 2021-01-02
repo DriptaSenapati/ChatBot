@@ -36,6 +36,9 @@ yvocab_size = xvocab_size
 emb_dim = 1024
 idx2w, w2idx, limit = data_utils_2.get_metadata()
 
+
+print('Preparing model............')
+
 model = seq2seq_wrapper.Seq2Seq(xseq_len=xseq_len,
                                 yseq_len=yseq_len,
                                 xvocab_size=xvocab_size,
@@ -46,7 +49,7 @@ model = seq2seq_wrapper.Seq2Seq(xseq_len=xseq_len,
 
 
 session = model.restore_last_session()
-print(session)
+
 # Getting the ChatBot predicted answer
 
 

@@ -141,7 +141,7 @@ def process_data():
     lines = [ line.lower() for line in lines ]
 
     print('\n:: Sample from read(p) lines')
-    print(lines[121:125])
+    # print(lines[121:125])
     print('\n>> Filter lines')
     lines = [ filter_line(line, EN_WHITELIST) for line in lines ]
     print(lines[121:125])
